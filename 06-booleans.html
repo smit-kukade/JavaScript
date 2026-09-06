@@ -27,6 +27,60 @@
             console.log(true || false); // true
             console.log(true && true); // true
             console.log(!true); // false
+
+            // truthy and falsy values concept
+
+            /* if (5){
+                console.log('truthy');
+            } */
+
+            if (0){
+                console.log('trurhy');
+            } 
+            /* falsy Values are 
+            false  0  Nan  undefined  null */
+            // Any value not on this list is truthy
+
+            const cartQuantity = 5;
+
+            if (cartQuantity){
+                console.log('cart has products'); // cart has products
+            }
+
+            console.log(!0); // true 
+
+            console.log('text' / 5); // NaN (Not a Number or Not a Name)
+
+            let variable1;
+            console.log(variable1); // undefined
+
+            // Below is the best approach to write code than the above undefined code
+            const variable2 = undefined;
+            console.log(variable2);
+
+            // Ternary Operator
+            const result = true ? 'truthy' : 'falsy' ;
+            console.log(result); // truthy
+
+            // These are shortcuts can be use if require
+            /*const output = 0 ? 'truthy' : 'falsy' ;
+            console.log(output); // falsy
+
+            false && console.log('hello'); // falsy
+
+            const message = false && 'hello';
+            console.log(message); // false*/
+
+            //In default code (||) operator
+            /* value1 || value2 in default we have true value always so
+            we already know th result */ 
+            /*const currency = 'EUR' || 'USD';
+            console.log(currency); // EUR*/ 
+
+            const currency = undefined || 'USD';
+            console.log(currency); // USD
+
+            
         </script>
     </body>
 </html>

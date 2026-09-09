@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      7g
+    </title>
+  </head>
+  <body>
+    <script>
+      function coverLength(length, from, to) {
+        if (from === 'miles' && to === 'km'){
+          const result = length * 1.6;
+          return `${result} ${to}`;
+        } else if (from === 'km' && to === 'miles') {
+          const result = length / 1.6;
+          return `${result} ${to}`;
+        } else if (from === to){
+          const result = length;
+          return `${result} ${to}`;
+        }
+      }
+
+      console.log(coverLength(50, 'miles', 'km'));
+      console.log(coverLength(32, 'km', 'miles'));
+      console.log(coverLength(50, 'km', 'km'));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      7i
+    </title>
+  </head>
+  <body>
+    <script>
+      function coverLength(length, from, to) {
+        if (from !== 'km' && from !== 'miles' && from !== 'ft') {
+          return `Invalid unit: ${from}`;
+        } else if (to !== 'km' && to !== 'miles' && to !== 'ft') {
+          return `Invalid unit: ${to}`;
+        }
+
+        if (from === 'miles' && to === 'km'){
+          const result = length * 1.6;
+          return `${result} ${to}`;
+        } else if (from === 'km' && to === 'miles') {
+          const result = length / 1.6;
+          return `${result} ${to}`;
+        } else if (from === to){
+          const result = length;
+          return `${result} ${to}`;
+        }
+
+        else if (from === 'miles' && to === 'km'){
+          const result = length * 1.6;
+          return `${result} ${to}`;
+        } else if (from === 'miles' && to === 'ft') {
+          const result = length * 5280;
+          return `${result} ${to}`;
+        } else if (from === 'km' && to === 'ft'){
+          const result = length * 3281;
+          return `${result} ${to}`;
+        }
+      }
+      console.log(coverLength(50, 'miles', 'km'));
+      console.log(coverLength(32, 'km', 'miles'));
+      console.log(coverLength(50, 'km', 'km'));
+
+      console.log(coverLength(5, 'miles', 'km'));
+      console.log(coverLength(5, 'miles', 'ft'));
+      console.log(coverLength(5, 'km', 'ft'));
+
+      console.log(coverLength(5, 'lbs', 'lbs'));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Objects
+    </title>
+  </head>
+  <body>
+    <script>
+      /*const product = {
+        name: 'socks',
+        price: 1090
+      };
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+      
+      product.name = 'cotton socks';
+      console.log(product);
+
+      product.newProperty = true;
+      console.log(product);
+
+      delete product.newProperty;
+      console.log(product);*/
+
+      /*
+      const product2 = {
+        name: 'shirt',
+        'delivery-time': '1 day',
+        rating: { //its a nested object
+          stars: 4.5,
+          count: 87
+        },
+        fun: function funcion1() {
+          console.log('function inside object');
+        }
+
+      };
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2['name']);
+      //console.log(product2.delivery-time); // for this kind of property or a variable we have to use brackets where . don't work
+      console.log(product2['delivery-time']);
+
+      console.log(product2.rating.count);
+      product2.fun();
+
+      console.log(typeof console);
+      console.log(typeof console.log);
+
+      
+      console.log(JSON.stringify(product2)); //stringify is the JSON object
+      
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString)); // It convert JSON string back to JavaScript
+      */
+      //Built-in Objects
+    /*
+      1) Math.random()
+      2) JSON (JavaScript Object Notation)
+        - a syntax
+        - similar to JavaScript object
+        - but has less features
+          - JSON does not support functions
+          - In JSON property's and values should be in double qoutes 
+        - We use JSON 
+          - when we send data between computers
+          - when we store data
+        - JSON object convert JavaScript object into JSON object
+
+      3) localStorage
+        - localStorage only supports string
+        - it has setItem() property for storing items
+        - it has getItem() property for getting items
+      4) console
+    */
+
+    console.log('hello'.length); //5
+    console.log('hello'.toUpperCase()); //HELLO
+
+    const object1 = {
+      message: 'hello'
+    };
+    const object2 = object1;
+
+    object1.message = 'Good job!';
+    console.log(object1);
+    console.log(object2);
+
+    const object3 = {
+      message: 'Good job!'
+    };
+    console.log(object3 === object1); //false -> because object3 is different reference as compared to object1
+    console.log(object1 === object2); // true
+
+    const object4 = {
+      message: 'Good job!',
+      price: 799
+    };
+    //const message = object4.message;
+
+    const { message, price } = object4;
+    console.log(message);
+    console.log(price);
+
+    const object5 = {
+      //message: message // if property and value are the same then we can write it like only property message
+      message,
+      //method: function function1() {
+      //  console.log('method');
+      //}
+      method() {
+        console.log('method');
+      }
+    };
+    console.log(object5);
+    object5.method();
+    </script>
+  </body>
+</html>

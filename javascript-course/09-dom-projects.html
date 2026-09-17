@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      DOM Projects
+    </title>
+  </head>
+  <body>
+    <p>
+      YouTube Subscribe Button
+    </p>
+    <button onclick="
+      subscribe();
+    " class="js-subscribe-button">
+      Subscribe
+    </button>
+
+      <p>
+        Amazon Shipping Calculator
+      </p>
+      <input placeholder="Cost of order" class="js-cost-input"  onkeydown="
+      handleCostKeydown(event);
+      ">
+      <button onclick="
+        calculateTotal();
+      ">
+        Calculate
+      </button>
+      <p class="js-total-cost">
+
+      </p>
+
+    <p>
+      YouTube Join Button
+    </p>
+    <button onclick="
+      join();
+    " class="js-join-button">
+      Join
+    </button>
+
+    <p>
+      YouTube Like Button
+    </p>
+    <button onclick="
+      like();
+    " class="js-like-button">
+      Like
+    </button>
+
+    <p>
+      YouTube Save Button
+    </p>
+    <button onclick="
+      save();
+    " class="js-save-button">
+      Save
+    </button>
+    <script>
+      function handleCostKeydown(event) {
+        console.log(event.key);
+        if (event.key === 'Enter') {
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value);
+
+        if (cost < 40) {
+          cost = cost + 10;
+        }
+
+        document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+      }
+
+      function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if (buttonElement.innerText === 'Subscribe') {
+          buttonElement.innerHTML = 'Subscribed';
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+        }
+      }
+      
+      function join() {
+        const joinButton = document.querySelector('.js-join-button');
+
+        if (joinButton.innerText === 'Join') {
+          joinButton.innerHTML = 'Joined';
+        } else {
+          joinButton.innerHTML = 'Join';
+        }
+      }
+
+      function like() {
+        const likeButton = document.querySelector('.js-like-button');
+
+        if (likeButton.innerText === 'Like') {
+          likeButton.innerHTML = 'Liked';
+        } else {
+          likeButton.innerHTML = 'Like';
+        }
+      }
+
+      function save() {
+        const saveButton = document.querySelector('.js-save-button');
+
+        if (saveButton.innerText === 'Save') {
+          saveButton.innerHTML = 'Saved';
+        } else {
+          saveButton.innerHTML = 'Save';
+        }
+      }
+    </script>
+  </body>
+</html>
